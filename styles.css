@@ -1,10 +1,19 @@
-*{
-    margin: 0;
-    padding:0;
-    box-sizing: border-box;
-    align-items: center;
-    
+:root{
+    --background-color:#fff;
+    --text-color:#555;
+    --title-color:#000;
 }
+.dark-theme{
+    --background-color:#000;
+    --text-color:#999;
+    --title-color:#fff;
+}
+body{
+    background:var(--background-color);
+    color:var(--text-color);
+    transition: background 0.8s,color 0.8s;
+}
+
 a .name{
     background-color: rgb(233, 20, 109);
     width: 70%;
@@ -12,11 +21,16 @@ a .name{
     padding: 5px;
     
 }
-navbar{
+.navbar{
     background-color: white;
    
+   
 }
-    
+.navbar ul{
+    flex:1;
+    justify-content: right;
+}
+
 .nav-link{
      
     color:black;
@@ -27,6 +41,22 @@ navbar{
 .nav-link:hover{
     color: white;
     background-color:black ;
+}
+.toggle-btn{
+    background-color: black;
+    color:white;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width:120px;
+    height:40px;
+    border-radius:20px;
+    cursor:pointer;
+
+}
+.toggle-btn img{
+    width:25px;
+    margin-left: 10px;
 }
 /* main part */
 .main{
@@ -90,28 +120,28 @@ navbar{
 .pro-value1{
     animation: load1 3s normal forwards;
     border-radius:50px;
-    background-color: black;
+    background-color: #555;
     height: 30px;
     width:0;
 }
 .pro-value2{
     animation: load2 3s normal forwards;
     border-radius:50px;
-    background-color: black;
+    background-color:#555;
     height: 30px;
     width:0;
 }
 .pro-value3{
     animation: load3 3s normal forwards;
     border-radius:50px;
-    background-color: black;
+    background-color: #555;
     height: 30px;
     width:0;
 }
 .pro-value4{
     animation: load4 3s normal forwards;
     border-radius:50px;
-    background-color: black;
+    background-color: #555;
     height: 30px;
     width:0;
 }
@@ -162,13 +192,13 @@ navbar{
     width:145px;
     outline:none;
     border:none;
-    background-color: black;
+    background-color:rgb(233, 20, 109);
     color:white;
     border-radius: 4px;
 }
 .btn-1:hover{
     background-color: transparent;
-    color:black;
+    color:rgb(233, 20, 109);
     border:1px solid black;
     transition: 0.5s;
 }
@@ -179,11 +209,11 @@ navbar{
     outline:none;
     border:1px solid black;
     background-color:transparent;
-    color:black;
+    color:rgb(233, 20, 109);
     border-radius: 4px;
 }
 .btn-2:hover{
-    background-color: black;
+    background-color: rgb(233, 20, 109);
     color:white;
     border:1px solid black;
     transition: 0.5s;
@@ -199,6 +229,9 @@ navbar{
     color:gray;
 
 }
+.service.container:hover{
+    background: #000;
+} 
 .circle{
     height:70px;
     width:70px;
@@ -214,4 +247,64 @@ navbar{
     background-color: black;
     color:white;
     transition:0.5s;
+}
+/* protfolio */
+
+.control ul li{
+    list-style: none;
+    background-color: black;
+    padding:5px 15px;
+    color:white;
+    display:inline-block;
+    cursor:pointer;
+    letter-spacing: 2px;
+}
+.item {
+    position: relative;
+}
+.item:hover{
+    -webkit-box-shadow: -17px 3px 110px -63px rgba(0,0,0,0.75);
+-moz-box-shadow: -17px 3px 110px -63px rgba(0,0,0,0.75);
+box-shadow: -17px 3px 110px -63px rgba(0,0,0,0.75);
+transition: 0.5s;
+}
+.item span{
+    position:absolute;
+    top: 40%;
+    left:45%;
+    font-size:40px;
+    color:black;
+    cursor:pointer;
+    opacity: 0;
+}
+.item:hover span{
+    opacity: 1;
+    transition: 0.5s;
+}
+.item:before{
+    content:"";
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    background-color: rgba(238,235,230,0.644);
+    opacity:0;
+    position:absolute;
+}
+.item:hover:before{
+ opacity: 1;
+ transition: 0.3s;
+}
+.circle:hover{
+    background-color: black;
+    color:white;
+    transition: 0.4s;
+}
+footer{
+    background-color: black;
+    color:white;
+}
+#icon{
+    width:30px;
+    cursor:pointer;
 }
